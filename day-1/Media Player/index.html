@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Player</title>
+    <style></style>
+  </head>
+  <body>
+    <section class="media-player">
+      <img src="" alt="" />
+      <article class="player">
+        Seek: <input type="range" min="0" oninput="seek(this)" /><br />
+        <button onclick="playAudio()">Play</button>
+        <button onclick="pauseAudio()">Pause</button>
+        <button onclick="stopAudio()">Stop</button>
+        <button onclick="muteAudio()">Mute</button>
+        Volume:
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          oninput="changeVol(this)"
+        />
+      </article>
+    </section>
+    <audio src="audios/Alan-Walker-Faded.mp3" controls>
+      <source src="" />
+    </audio>
+
+    <script>
+      var aud = document.querySelector("audio");
+      function playAudio() {
+        aud.play();
+      }
+      function pauseAudio() {
+        aud.pause();
+      }
+      function stopAudio() {
+        aud.load();
+        aud.pause();
+      }
+      function muteAudio() {
+        aud.muted = !aud.muted;
+      }
+      function changeVol(v) {
+        aud.volume = v.value;
+      }
+      function seek(t) {
+        aud.currentTime = t.value;
+      }
+    </script>
+  </body>
+</html>
