@@ -35,6 +35,11 @@ function changeDuration(aud) {
   seekInput.setAttribute("max", aud.duration);
 }
 
+// update slider
+function updateSlider(aud) {
+  seekInput.value = aud.currentTime;
+}
+
 // play
 function playAudio() {
   aud.play();
