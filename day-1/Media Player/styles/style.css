@@ -65,6 +65,12 @@ audio {
   cursor: pointer;
 }
 
+.active {
+  background-color: #ccc;
+  border: 1px solid;
+  border-color: black;
+}
+
 .item img {
   height: 50px;
   width: 50px;
