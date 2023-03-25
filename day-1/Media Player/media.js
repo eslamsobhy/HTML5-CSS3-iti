@@ -12,22 +12,46 @@ window.addEventListener("load", function () {
 // songs
 var item = document.getElementsByClassName("item")[0];
 var item1 = document.getElementsByClassName("item")[1];
+var item2 = document.getElementsByClassName("item")[2];
+var item3 = document.getElementsByClassName("item")[3];
 
 // player image
 var playerImg = document.querySelector("img");
 
 function playAmelie() {
-  item.classList.add("active");
   item1.classList.remove("active");
+  item2.classList.remove("active");
+  item3.classList.remove("active");
+  item.classList.add("active");
   aud.setAttribute("src", "./audios/[HQ]-La-Valse-d'Amélie-Yann-Tiersen.mp3");
   playerImg.setAttribute("src", "./images/amelie.jpeg");
 }
 
 function playFaded() {
-  item1.classList.add("active");
+  item2.classList.remove("active");
+  item3.classList.remove("active");
   item.classList.remove("active");
+  item1.classList.add("active");
   aud.setAttribute("src", "./audios/Alan-Walker-Faded.mp3");
   playerImg.setAttribute("src", "./images/faded.jpeg");
+}
+
+function playSkyfall() {
+  item1.classList.remove("active");
+  item3.classList.remove("active");
+  item.classList.remove("active");
+  item2.classList.add("active");
+  aud.setAttribute("src", "./audios/Adele - Skyfall (Lyric Video).mp3");
+  playerImg.setAttribute("src", "./images/skyfall.jpg");
+}
+
+function playAndru() {
+  item1.classList.remove("active");
+  item2.classList.remove("active");
+  item.classList.remove("active");
+  item3.classList.add("active");
+  aud.setAttribute("src", "./audios/Andru - WAILIN'.mp3");
+  playerImg.setAttribute("src", "./images/andru.jpg");
 }
 
 // change duration
