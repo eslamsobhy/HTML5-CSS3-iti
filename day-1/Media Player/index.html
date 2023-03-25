@@ -4,53 +4,52 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Media Player</title>
-    <style></style>
   </head>
   <body>
     <section class="media-player">
-      <img src="" alt="" />
       <article class="player">
-        Seek: <input type="range" min="0" oninput="seek(this)" /><br />
-        <button onclick="playAudio()">Play</button>
-        <button onclick="pauseAudio()">Pause</button>
-        <button onclick="stopAudio()">Stop</button>
-        <button onclick="muteAudio()">Mute</button>
-        Volume:
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          oninput="changeVol(this)"
-        />
+        <figure>
+          <img src="./images/amelie.jpeg" />
+        </figure>
+        <div class="btns">
+          <button onclick="playAudio()">Play</button>
+          <button onclick="pauseAudio()">Pause</button>
+          <button onclick="stopAudio()">Stop</button>
+          <button onclick="muteAudio()">Mute</button><br />
+        </div>
+        <article class="range">
+          <span>Seek:</span> <input type="range" min="0" oninput="seek(this)" />
+        </article>
+        <article class="range">
+          <span>Volume:</span>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            oninput="changeVol(this)"
+          />
+        </article>
       </article>
     </section>
-    <audio src="audios/Alan-Walker-Faded.mp3" controls>
-      <source src="" />
-    </audio>
+    <audio
+      src="audios/[HQ]-La-Valse-d'Amélie-Yann-Tiersen.mp3"
+      controls
+    ></audio>
 
-    <script>
-      var aud = document.querySelector("audio");
-      function playAudio() {
-        aud.play();
-      }
-      function pauseAudio() {
-        aud.pause();
-      }
-      function stopAudio() {
-        aud.load();
-        aud.pause();
-      }
-      function muteAudio() {
-        aud.muted = !aud.muted;
-      }
-      function changeVol(v) {
-        aud.volume = v.value;
-      }
-      function seek(t) {
-        aud.currentTime = t.value;
-      }
-    </script>
+    <section class="list">
+      <article class="item">
+        <img src="./images/amelie.jpeg" />
+        <p class="music-name">La Valse d'Amélie Yann Tiersen</p>
+      </article>
+      <article class="item">
+        <img src="./images/faded.jpeg" />
+        <p class="music-name">Alan Walker - Faded</p>
+      </article>
+    </section>
+
+    <script src="./media.js"></script>
   </body>
 </html>
