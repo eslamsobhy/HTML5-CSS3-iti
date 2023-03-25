@@ -1,11 +1,19 @@
+// audio element
 var aud = document.querySelector("audio");
 
+// seek input
+var seekInput = document.getElementsByTagName("input")[0];
+
+// max of the seek input set to the audio duration
 window.addEventListener("load", function () {
-  var seekInput = document.getElementsByTagName("input")[0];
   seekInput.setAttribute("max", aud.duration);
 });
+
+// songs
 var item = document.getElementsByClassName("item")[0];
 var item1 = document.getElementsByClassName("item")[1];
+
+// player image
 var playerImg = document.querySelector("img");
 
 function playAmelie() {
@@ -20,6 +28,11 @@ function playFaded() {
   item.classList.remove("active");
   aud.setAttribute("src", "./audios/Alan-Walker-Faded.mp3");
   playerImg.setAttribute("src", "./images/faded.jpeg");
+}
+
+// change duration
+function changeDuration(aud) {
+  seekInput.setAttribute("max", aud.duration);
 }
 
 // play
