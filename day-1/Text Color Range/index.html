@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Range</title>
+  </head>
+  <body>
+    Red: <input type="range" min="0" max="255" oninput="changeColor()" />
+    <br />
+    Green: <input type="range" min="0" max="255" oninput="changeColor()" />
+    <br />
+    Blue: <input type="range" min="0" max="255" oninput="changeColor()" />
+
+    <h2>Change the color ranges above and observe my color chnage :)</h2>
+
+    <script>
+      var ele = document.querySelector("h2");
+
+      function changeColor() {
+        var r = document.getElementsByTagName("input")[0].value;
+        var g = document.getElementsByTagName("input")[1].value;
+        var b = document.getElementsByTagName("input")[2].value;
+        ele.style.color = `rgb(${r}, ${g}, ${b})`;
+      }
+    </script>
+  </body>
+</html>
