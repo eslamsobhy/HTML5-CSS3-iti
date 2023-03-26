@@ -15,8 +15,22 @@ var item1 = document.getElementsByClassName("item")[1];
 var item2 = document.getElementsByClassName("item")[2];
 var item3 = document.getElementsByClassName("item")[3];
 
+// songs
+var songsObj = {
+  amelie: "./audios/[HQ]-La-Valse-d'Amélie-Yann-Tiersen.mp3",
+  faded: "./audios/Alan-Walker-Faded.mp3",
+  skyfall: "./audios/Adele - Skyfall (Lyric Video).mp3",
+  andru: "./audios/Andru - WAILIN'.mp3",
+};
+
 // player image
 var playerImg = document.querySelector("img");
+
+// play song
+function playSong(item) {
+  playerImg.setAttribute("src", item.children[0].src);
+  aud.setAttribute("src", songsObj[item.getAttribute("name")]);
+}
 
 function playAmelie() {
   item1.classList.remove("active");
