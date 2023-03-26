@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Remember Me</title>
+    <title>Email Validation</title>
   </head>
   <body>
+    <h1>Change Email Address</h1>
+    <!-- onkeydown="return /[a-z]/i.test(event.key)" -->
+    <form>
+      <input type="text" placeholder="Username" pattern="[a-z]*" required />
+      <br />
+      <input
+        type="email"
+        placeholder="Email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        required
+      />
+      <br />
+      Remember Me?<input type="checkbox" />
+      <br />
+      <button type="submit">Change</button>
+    </form>
+
     <script src="./rm.js"></script>
   </body>
 </html>
