@@ -1,1 +1,76 @@
+.card-container {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.card {
+  width: 300px;
+  height: 500px;
+  background-color: #eee;
+  border: 1px solid #000;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.card h1:first-child {
+  padding: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card h1:last-child {
+  padding: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-shape {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#trapezoid {
+  border-bottom: 35px solid black;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 28px;
+}
+
+#heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  transform: rotate(180deg);
+}
+#heart:before,
+#heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: -6px;
+  width: 50px;
+  height: 75px;
+  background: black;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+#heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
